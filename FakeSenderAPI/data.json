@@ -1,0 +1,14 @@
+[
+  {
+    "id": "3fa85f64-5717-4562-b3fc-2c963f66afa6",
+    "userId": "User1",
+    "timestamp": 1699993200,
+    "wattage": 123.45
+  },
+  {
+    "id": "9b5a73c8-9a33-4e37-a4d7-2a7b1db3f22b",
+    "userId": "User2",
+    "timestamp": 1699996800,
+    "wattage": 150.75
+  }
+]
