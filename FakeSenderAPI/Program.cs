@@ -1,14 +1,17 @@
-using FakeSenderAPI.Services;
+using DataSimulator.Services;
 
 var builder = Host.CreateDefaultBuilder(args)
     .ConfigureServices((context, services) =>
     {
-        services.AddSingleton<ISignalService, SignalService>();
+        services.AddSingleton<ISignalService>(provider => new RandomSignalService("RandomUser"));
+        services.AddSingleton<ISignalService>(provider => new StaticSignalService("7777", 666));
+
+        services.AddSingleton<ISignalServicesProvider, SignalServicesProvider>();
 
         services.AddHttpClient("MeasurementClient", client =>
         {
-            var configuration = context.Configuration.GetSection("MeasurementService");
-            client.BaseAddress = new Uri(configuration["BaseUrl"]);
+            var baseUrl = context.Configuration["MeasurementService:BaseUrl"];
+            client.BaseAddress = new Uri(baseUrl);
         });
 
         services.AddHostedService<DataSimulatorService>();

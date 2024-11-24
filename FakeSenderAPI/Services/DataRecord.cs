@@ -1,11 +1,11 @@
-﻿namespace FakeSenderAPI.Services
+﻿namespace DataSimulator.Services
 {
 
     public class DataRecord
     {
-        public float wattage { get; set; }
-        public int id { get; set; }
-        public DateTime timestamp { get; set; }
+        public float Wattage { get; set; }
+        public string UserId { get; set; }
+        public long Timestamp { get; set; }
     }
 
 

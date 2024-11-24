@@ -1,4 +1,4 @@
-﻿namespace FakeSenderAPI.Services
+﻿namespace DataSimulator.Services
 {
     public interface ISignalService
     {
